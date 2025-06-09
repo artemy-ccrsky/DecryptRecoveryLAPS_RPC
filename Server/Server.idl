@@ -1,0 +1,14 @@
+[
+    uuid(12345678-1234-1234-1234-1234567890ab),
+        version(1.0),
+        implicit_handle(handle_t ImplicitHandle)
+]
+interface DecryptRecoveryLAPS
+{
+    error_status_t DecryptPassword(
+        [in, string] const wchar_t* dn,
+        [in, size_is(authKeyLen)] const unsigned char* authKey,
+        [in] unsigned int authKeyLen,
+        [out, string] wchar_t** result
+    );
+}
